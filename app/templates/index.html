@@ -8,8 +8,18 @@
         {% if current_user.mood_texts.count() == 0 %}
             <p>You have no recent mood entries</p>
         {% else %}
-            {% for text in current_user.mood_texts.all() %}
-            <div><p>{{ text.date }} ({{ text.sentiment }}): <b>{{ text.content }}</b></p></div>
+            {% for text in current_user.mood_texts.order_by(MoodText.id.desc()).all() %}
+                <div><p
+                    {% if text.sentiment is not none %}
+                    style = "color:rgb(
+                        {% if text.sentiment|int > 0 %}
+                            0, {{ text.sentiment }}, 0
+                        {% else %}
+                            {{ (text.sentiment|int)*-1 }}, 0, 0
+                        {% endif %}
+                    )"
+                    {% endif %}
+                >{{ text.date }} ({{ text.sentiment }}): <b>{{ text.content }}</b></p></div>
             {% endfor %}
         {% endif %}
     </div>

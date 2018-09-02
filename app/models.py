@@ -87,7 +87,8 @@ class MoodText(db.Model):
     def to_dict(self):
         data = {
             'text_id': self.id,
-            'content': self.content
+            'content': self.content,
+            'sentiment': self.sentiment
         }
         return data
 

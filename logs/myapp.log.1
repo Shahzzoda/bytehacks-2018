@@ -1,77 +1,58 @@
-2018-09-02 01:12:11,854 ERROR: Exception on /logout [GET] [in c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such column: user.name
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\routes.py", line 48, in logout
-    logout_user()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\utils.py", line 190, in logout_user
-    user = _get_user()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\models.py", line 104, in load_user
-    return User.query.get(int(id))
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 923, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1006, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2947, in one
-    ret = self.one_or_none()
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2917, in one_or_none
-    ret = list(self)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2988, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3011, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.name [SQL: 'SELECT user.id AS user_id, user.name AS user_name, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.phone_number AS user_phone_number \nFROM user \nWHERE user.id = ?'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2018-09-02 01:12:59,467 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:16:18,688 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:16:30,795 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:16:44,494 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:18:38,624 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:18:50,303 ERROR: Exception on /register [GET] [in c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py:1761]
+2018-09-02 01:44:23,436 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:44:27,870 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:46:17,290 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:46:23,574 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:49:17,673 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:51:43,931 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:52:06,996 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:54:05,501 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:04:37,215 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:04:43,501 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:04:49,788 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:05:11,150 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:05:27,621 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:05:32,254 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:07:02,296 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:07:41,039 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:07:49,017 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:16:30,520 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:16:52,983 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:16:56,772 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:20:54,132 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:22:46,657 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:23:07,715 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:23:28,401 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:28:00,836 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 02:32:53,078 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:39]
+2018-09-02 02:33:23,935 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:39]
+2018-09-02 02:34:39,636 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:35:15,050 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:35:25,593 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:36:19,247 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:36:28,894 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:51:13,877 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:53:16,061 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:53:33,331 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:53:54,920 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:53:57,260 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:54:30,629 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 02:57:16,520 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 03:11:20,882 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 03:17:34,142 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 03:17:46,114 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 03:21:06,615 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 03:21:17,323 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 03:21:26,262 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 04:03:21,875 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 04:04:09,572 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 04:10:24,420 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 04:13:03,523 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 04:39:44,092 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 04:45:18,716 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 04:46:16,886 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 05:35:28,921 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:16:29,043 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:17:02,656 ERROR: Exception on /api/mood_texts [POST] [in c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -85,36 +66,27 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\routes.py", line 63, in register
-    return render_template('register.html', title='Register', form=form)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\register.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\base.html", line 37, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\register.html", line 17, in block "content"
-    {{ form.name.label }}<br>
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'app.forms.RegistrationForm object' has no attribute 'name'
-2018-09-02 01:23:44,347 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:31:48,964 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:32:40,168 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:42:21,823 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:42:35,375 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:42:47,662 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:43:19,897 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:43:28,583 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:43:32,228 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:44:17,226 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\api\mood_texts.py", line 16, in create_text
+    return jsonify(response)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\json\__init__.py", line 321, in jsonify
+    dumps(data, indent=indent, separators=separators) + '\n',
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\json\__init__.py", line 179, in dumps
+    rv = _json.dumps(obj, **kwargs)
+  File "C:\Users\Peggy Li\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Peggy Li\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Peggy Li\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\json\__init__.py", line 81, in default
+    return _json.JSONEncoder.default(self, o)
+  File "C:\Users\Peggy Li\AppData\Local\Programs\Python\Python36\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'Response' is not JSON serializable
+2018-09-02 06:18:39,218 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:20:57,459 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:22:05,427 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:22:41,404 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:25:45,903 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:31:14,700 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 06:32:42,452 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]

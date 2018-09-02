@@ -9,7 +9,7 @@
             <p>You have no recent mood entries</p>
         {% else %}
             {% for text in current_user.mood_texts.all() %}
-            <div><p>{{ text.date }}: <b>{{ text.content }}</b></p></div>
+            <div><p>{{ text.date }} ({{ text.sentiment }}): <b>{{ text.content }}</b></p></div>
             {% endfor %}
         {% endif %}
     </div>

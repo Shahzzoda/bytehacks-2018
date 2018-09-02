@@ -120,3 +120,5 @@ jinja2.exceptions.UndefinedError: 'MoodText' is undefined
 2018-09-02 07:38:26,847 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
 2018-09-02 08:13:33,884 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
 2018-09-02 08:22:41,453 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 08:39:51,533 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]
+2018-09-02 08:42:40,106 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:40]

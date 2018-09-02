@@ -1,21 +1,13 @@
-2018-09-01 22:25:13,966 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-01 23:19:11,326 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-01 23:23:14,316 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-01 23:26:51,377 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-01 23:34:21,597 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-01 23:41:34,763 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-01 23:46:54,150 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-01 23:48:59,722 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:11:28,914 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:21:53,684 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:23:02,632 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:30:57,584 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:33:53,351 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:36:04,681 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:38:59,632 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:41:55,652 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:47:28,653 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:47:34,088 ERROR: Exception on /index [GET] [in c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py:1761]
+2018-09-02 01:12:11,854 ERROR: Exception on /logout [GET] [in c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.name
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,10 +21,72 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\routes.py", line 27, in index
-    return render_template('index.html', title='Home', posts=posts)
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\routes.py", line 48, in logout
+    logout_user()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\utils.py", line 190, in logout_user
+    user = _get_user()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\models.py", line 104, in load_user
+    return User.query.get(int(id))
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 923, in get
+    ident, loading.load_on_pk_identity)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1006, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
+    return q.one()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2947, in one
+    ret = self.one_or_none()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2917, in one_or_none
+    ret = list(self)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2988, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3011, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.name [SQL: 'SELECT user.id AS user_id, user.name AS user_name, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.phone_number AS user_phone_number \nFROM user \nWHERE user.id = ?'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-09-02 01:12:59,467 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:16:18,688 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:16:30,795 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:16:44,494 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:18:38,624 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:18:50,303 ERROR: Exception on /register [GET] [in c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\routes.py", line 63, in register
+    return render_template('register.html', title='Register', form=form)
   File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\templating.py", line 117, in _render
@@ -45,23 +99,22 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\index.html", line 1, in top-level template code
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\register.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\base.html", line 19, in top-level template code
-    <li><a href="{{ url_for('resources') }}">Home</a></li>
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'resources'. Did you mean 'register' instead?
-2018-09-02 00:49:35,163 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:55:54,986 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 00:58:17,694 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:02:33,511 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
-2018-09-02 01:12:00,719 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\base.html", line 37, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\register.html", line 17, in block "content"
+    {{ form.name.label }}<br>
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.RegistrationForm object' has no attribute 'name'
+2018-09-02 01:23:44,347 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:31:48,964 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:32:40,168 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:42:21,823 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:42:35,375 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:42:47,662 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:43:19,897 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:43:28,583 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:43:32,228 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:44:17,226 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]

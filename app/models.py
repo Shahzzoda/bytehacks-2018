@@ -92,11 +92,11 @@ class MoodText(db.Model):
         return data
 
     def from_dict(self, data):
-        for field in ['content', 'user_id']:
+        for field in ['content', 'phone_number']:
             if field in data:
                 setattr(self, field, data[field])
-        if 'user_id' in data:
-            setattr(self, 'user', User.query.get(data['user_id']))
+        if 'phone_number' in data:
+            setattr(self, 'user', User.query.filter_by(phone_number=data['phone_number']).first())
 
 @login.user_loader
 def load_user(id):

@@ -11,9 +11,9 @@
     <body>
         <nav>
             <div class="container">
-                <div>
-                    Roberta
-                </div>
+                <h2 style="font-family:Pacifico; display: flex; align-items: center; margin: -5px 0;">
+                    Roobi
+                </h2>
                 <ul>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('resources') }}">Resources</a></li>
@@ -25,7 +25,7 @@
                 </ul>
             </div>
         </nav>
-        {% with messages = get_flashed_messages() %}
+        <!-- {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
             {% for message in messages %}
@@ -33,7 +33,12 @@
             {% endfor %}
         </ul>
         {% endif %}
-        {% endwith %}
+        {% endwith %} -->
         {% block content %}{% endblock %}
+        <footer>
+            <div class="container">
+                Please note that this tracker does not replace professional help which may include doctors, psychologists/psychiatrists, etc. In case of an emergency please contact the necessary authorities such as 911 and/or suicide hotline. Mental help hotlines are listed under the resources tab.
+            </div>
+        </footer>
     </body>
 </html>

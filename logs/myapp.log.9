@@ -1,0 +1,67 @@
+2018-09-01 22:25:13,966 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-01 23:19:11,326 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-01 23:23:14,316 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-01 23:26:51,377 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-01 23:34:21,597 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-01 23:41:34,763 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-01 23:46:54,150 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-01 23:48:59,722 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:11:28,914 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:21:53,684 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:23:02,632 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:30:57,584 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:33:53,351 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:36:04,681 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:38:59,632 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:41:55,652 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:47:28,653 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:47:34,088 ERROR: Exception on /index [GET] [in c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\routes.py", line 27, in index
+    return render_template('index.html', title='Home', posts=posts)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Peggy Li\projects\bytehacks-2018\app\templates\base.html", line 19, in top-level template code
+    <li><a href="{{ url_for('resources') }}">Home</a></li>
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\users\peggy li\projects\bytehacks-2018\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'resources'. Did you mean 'register' instead?
+2018-09-02 00:49:35,163 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:55:54,986 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 00:58:17,694 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:02:33,511 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]
+2018-09-02 01:12:00,719 INFO: Myapp startup [in C:\Users\Peggy Li\projects\bytehacks-2018\app\__init__.py:38]

@@ -32,10 +32,22 @@ h1 {
     font-size: 3rem;
 }
 
+input {
+    width: 100%;
+    padding: .4rem;
+    border-radius: 2px;
+    border: 1px solid #bdbdbd;
+}
+
+input[type="checkbox"] {
+    width: auto
+}
+
 
 nav .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 1024px;
 }
 
@@ -47,8 +59,17 @@ nav ul li {
     list-style: none;
     display: inline-block;
     float: left;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
+
+nav li a {
+    text-decoration: none;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
 
 body > section:nth-of-type(1) {
     background: url("../img/typewriter-bg.jpg") no-repeat center center fixed;
@@ -56,19 +77,24 @@ body > section:nth-of-type(1) {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: calc(100vh - 53.5px);
+    min-height: calc(100vh - 6rem);
     align-items: center;
 }
 
 body > section:nth-of-type(1) .container {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 body > section:nth-of-type(1) h1 {
     margin: 0;
+    text-align: center;
 }
 
+footer {
+    font-size: .8rem;
+    color: #9e9e9e;
+}
 
 button {
   font-size: 12px ;

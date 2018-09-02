@@ -8,7 +8,7 @@
         {% if current_user.mood_texts.count() == 0 %}
             <p>You have no recent mood entries. Text "Hi" to (586) 788-1702 to begin writing.</p>
         {% else %}
-            <p style="color:gray"><i>Text "Hi" to (586) 788-1702 to add a new entry.</i></p>
+            <p style="color:#757575"><i>Text "Hi" to (586) 788-1702 to add a new entry.</i></p>
             {% for text in current_user.mood_texts.order_by(MoodText.id.desc()).all() %}
                 <div><p
                     {% if text.sentiment is not none %}

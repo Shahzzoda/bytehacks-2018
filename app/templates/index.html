@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+<section>
+    <div class="container">
+        <h1>Hi, {{ current_user.name }}!</h1>
+
+        {% if current_user.mood_texts.count() == 0 %}
+            <p>You have no recent mood entries</p>
+        {% else %}
+            {% for text in current_user.mood_texts.all() %}
+            <div><p>{{ text.date }}: <b>{{ text.content }}</b></p></div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

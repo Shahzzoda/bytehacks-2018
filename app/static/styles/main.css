@@ -1,0 +1,125 @@
+/* body {
+  background-color: white ;
+  padding: 20px;
+}
+
+h1, h2, h3, p, ul{
+  background-color: lightblue;
+  font-size: 40px;
+  padding: 20px;
+  width: 700px;
+} */
+
+body {
+    font-family: 'Open Sans';
+    margin: 0;
+    font-size: 16px;
+}
+
+body > * {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1024px;
+}
+
+h1 {
+    font-family: 'Pacifico';
+    font-size: 3rem;
+}
+
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    width: 1024px;
+}
+
+nav ul {
+    margin: 0
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    float: left;
+    margin-left: 0.5rem;
+}
+
+body > section:nth-of-type(1) {
+    background: url("../img/typewriter-bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: calc(100vh - 53.5px);
+    align-items: center;
+}
+
+body > section:nth-of-type(1) .container {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+body > section:nth-of-type(1) h1 {
+    margin: 0;
+}
+
+
+button {
+  font-size: 12px ;
+  padding: 10px ;
+  background-color: lightblue;
+}
+
+#background1 {
+  background-image: url("background.jpg");
+  background-size: 1290px 710px;
+}
+
+#background2 {
+  background-image: url("background2.jpg");
+  background-size: 1500px 1000px;
+
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+}

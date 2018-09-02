@@ -1,5 +1,7 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/main.css') }}">
         {% if title %}
         <title>{{ title }} - bytehacks-2018</title>
         {% else %}
@@ -7,16 +9,22 @@
         {% endif %}
     </head>
     <body>
-        <div>
-            bytehacks-2018:
-            <a href="{{ url_for('index') }}">Home</a>
-            {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
-            {% else %}
-            <a href="{{ url_for('logout') }}">Logout</a>
-            {% endif %}
-        </div>
-        <hr>
+        <nav>
+            <div class="container">
+                <div>
+                    Roberta
+                </div>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('resources') }}">Resources</a></li>
+                    {% if current_user.is_anonymous %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>

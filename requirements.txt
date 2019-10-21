@@ -16,7 +16,7 @@ google-cloud-language==1.0.2
 googleapis-common-protos==1.5.3
 grpcio==1.14.2
 gunicorn==19.9.0
-httpie==0.9.9
+httpie==1.0.3
 idna==2.7
 itsdangerous==0.24
 Jinja2==2.10
